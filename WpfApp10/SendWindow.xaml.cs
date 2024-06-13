@@ -23,16 +23,54 @@ namespace WpfApp10
         }
         private void SendEmailButton_Click(object sender, RoutedEventArgs e)
         {
-            // Send the current Excel file via email
-            MailMessage mail = new MailMessage(FromTbx.Text, ToTbx.Text, TitleTbx.Text, "Content of the email");
+            if (smtpCombo.SelectedIndex == 0)
+            {
+                MailMessage mail = new MailMessage(FromTbx.Text, ToTbx.Text, TitleTbx.Text, "Content of the email");
 
-            Attachment attachment = new Attachment(MainWindow.currentFilePath);
-            mail.Attachments.Add(attachment);
+                Attachment attachment = new Attachment(MainWindow.currentFilePath);
+                mail.Attachments.Add(attachment);
 
-            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-            smtpClient.Credentials = new System.Net.NetworkCredential(FromTbx.Text, PswTbx.Text);
-            smtpClient.EnableSsl = true;
-            smtpClient.Send(mail);
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                smtpClient.Credentials = new System.Net.NetworkCredential(FromTbx.Text, PswTbx.Text);
+                smtpClient.EnableSsl = true;
+                smtpClient.Send(mail);
+            }
+            else if (smtpCombo.SelectedIndex == 1)
+            {
+                MailMessage mail = new MailMessage(FromTbx.Text, ToTbx.Text, TitleTbx.Text, "Content of the email");
+
+                Attachment attachment = new Attachment(MainWindow.currentFilePath);
+                mail.Attachments.Add(attachment);
+
+                SmtpClient smtpClient = new SmtpClient("smtp.mail.ru", 465);
+                smtpClient.Credentials = new System.Net.NetworkCredential(FromTbx.Text, PswTbx.Text);
+                smtpClient.EnableSsl = true;
+                smtpClient.Send(mail);
+            }
+            else if (smtpCombo.SelectedIndex == 2)
+            {
+                MailMessage mail = new MailMessage(FromTbx.Text, ToTbx.Text, TitleTbx.Text, "Content of the email");
+
+                Attachment attachment = new Attachment(MainWindow.currentFilePath);
+                mail.Attachments.Add(attachment);
+
+                SmtpClient smtpClient = new SmtpClient("smtp.rambler.ru", 465);
+                smtpClient.Credentials = new System.Net.NetworkCredential(FromTbx.Text, PswTbx.Text);
+                smtpClient.EnableSsl = true;
+                smtpClient.Send(mail);
+            }
+            else if (smtpCombo.SelectedIndex == 3)
+            {
+                MailMessage mail = new MailMessage(FromTbx.Text, ToTbx.Text, TitleTbx.Text, "Content of the email");
+
+                Attachment attachment = new Attachment(MainWindow.currentFilePath);
+                mail.Attachments.Add(attachment);
+
+                SmtpClient smtpClient = new SmtpClient("smtp.yandex.ru", 465);
+                smtpClient.Credentials = new System.Net.NetworkCredential(FromTbx.Text, PswTbx.Text);
+                smtpClient.EnableSsl = true;
+                smtpClient.Send(mail);
+            }
         }
     }
 }

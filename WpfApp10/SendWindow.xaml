@@ -13,11 +13,18 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBox Text="your_email@gmail.com" x:Name="FromTbx" Grid.Row="0"/>
         <TextBox Text="введите пароль" x:Name="PswTbx" Grid.Row="1"/>
         <TextBox Text="recipient_email@example.com" x:Name="ToTbx" Grid.Row="2"/>
         <TextBox Text="Title of the email" x:Name="TitleTbx" Grid.Row="3"/>
-        <Button Content="Отправить" Click="SendEmailButton_Click" Grid.Row="4"/>
+        <ComboBox Grid.Row="4" x:Name="smtpCombo">
+            <ComboBoxItem Selector.IsSelected="True">Gmail</ComboBoxItem>
+            <ComboBoxItem>Mail</ComboBoxItem>
+            <ComboBoxItem>Rambler</ComboBoxItem>
+            <ComboBoxItem>Yandex</ComboBoxItem>
+        </ComboBox>
+        <Button Content="Отправить" Click="SendEmailButton_Click" Grid.Row="5"/>
     </Grid>
 </Window>
