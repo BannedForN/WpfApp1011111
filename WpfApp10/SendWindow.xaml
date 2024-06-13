@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfApp10.SendWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp10"
+        mc:Ignorable="d"
+        Title="SendWindow" Height="290" Width="494">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox Text="your_email@gmail.com" x:Name="FromTbx" Grid.Row="0"/>
+        <TextBox Text="введите пароль" x:Name="PswTbx" Grid.Row="1"/>
+        <TextBox Text="recipient_email@example.com" x:Name="ToTbx" Grid.Row="2"/>
+        <TextBox Text="Title of the email" x:Name="TitleTbx" Grid.Row="3"/>
+        <Button Content="Отправить" Click="SendEmailButton_Click" Grid.Row="4"/>
+    </Grid>
+</Window>
